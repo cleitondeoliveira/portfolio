@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* variáveis */
+:root {
+    --main-color: #3A3845;
+    --b1-color: #EDEDED;
+    --b2-color: #444444;
+    --b3-color: #346751;
+    --b4-color: #191A19;
+    --branco-cor: #fff;
+    --branco-alfa-40: rgba(255, 255, 255, 0.40);
+    --branco-alfa-25: rgba(255, 255, 255, 0.25);
+    --backdrop-blur: blur(5px);
+}
+
+
+/* configurações gerais */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, var(--b1-color), var(--b2-color));
+    background-attachment: fixed;
+    font-size: 16px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 300;
+    color: var(--b4-color);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    padding: 5vh 15px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--b3-color);
+    z-index: -1;
+    opacity: 0.12;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+h1, h2 {
+    font-weight: 600;
+}
+
+h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+section {
+    background-color: var(--branco-alfa-25);
+    border: 1px solid var(--branco-alfa-40);
+    min-height: 90vh;
+    border-radius: 30px;
+    backdrop-filter: var(--backdrop-blur);
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container {
+    padding: 0 40px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+ .hidden {
+    display: none !important; /* esconder a paginação */
+}
+
+.sec-padding {
+    padding: 80px 0;
+}
+
+/* sessão do titulo */
+
+.section-title {
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--branco-cor);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--b3-color);
+}
+
+/* botões */
+.btn {
+    line-height: 1.5;
+    background-color: var(--branco-alfa-25);
+    border: 1px solid var(--branco-alfa-40);
+    padding: 10px 28px;
+    display: inline-block;
+    border-radius: 30px;
+    color: var(--b3-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--b3-color);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: var(--branco-cor);
+}
+
+/* sessão da home */
+.home-section {
+    display: flex;
+    padding: 120px 0;
+}
+
+.home-text,
+.home-img {
+    width: 50%;
+    padding: 15px;
+}
+
+.home-text p {
+    font-size: 18px;
+}
+
+.home-text h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.home-text h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    /* estilo da escrita */
+    font-weight: 300;
+    /* tira o peso da fonte */
+    margin: 0 0 30px;
+}
+
+.home-text .btn {
+    margin: 0 15px 15px 0;
+}
+
+.home-img .img-box {
+    max-width: 360px;
+    background-color: var(--branco-alfa-25);
+    border-radius: 50%;
+    border: 8px solid var(--branco-alfa-25);
+    margin: auto;
+}
+
+.home-img .img-box img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* sessão sobre */
+
+.about-img {
+    width: 40%;
+    padding: 0 15px;
+
+}
+
+.about-text {
+    width: 60%;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+.about-img .img-box {
+    background-color: var(--branco-alfa-25);
+    max-width: 380px;
+    border: 1px solid var(--branco-alfa-40);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.about-img .img-box img {
+    width: 100%;
+}
+
+.about-text h3 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.about-text .skills{
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.about-text .skill-item{
+    background-color: var(--branco-alfa-25);
+    border: 1px var(--branco-alfa-40);
+    padding: 5px 15px;
+    text-transform: capitalize;
+    margin: 0 10px 10px 0;
+    border-radius: 20px; /* arredonda as bordas */   
+}
+
+.about-tabs{
+    margin-top: 20px;
+}
+
+.about-tabs .tab-item{
+    padding: 2px 0;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--b4-color);
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 30px 0 0;
+    position: relative;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.about-tabs .tab-item:last-child{
+    margin: 0;
+}
+
+.about-tabs .tab-item::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--b3-color);
+    transition: width 0.3s ease;
+}
+
+.about-tabs .tab-item:hover::before{
+    width: 100%;
+}
+
+.about-tabs .tab-item.active::before{
+    width: 100%;
+    background-color: var(--b3-color);    
+}
+
+.about-tabs .tab-item.active{
+    color: var(--b3-color);
+    opacity: 1;
+    cursor: auto;
+}
+
+.about-text .timeline-item{ 
+    margin-bottom: 30px;
+}
+
+.about-text .timeline{
+    position: relative;
+}
+
+.about-text .timeline::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    left: 5px;
+    background-color: var(--b3-color);
+}
+
+.about-text .tab-content{
+    padding: 40px 0;
+
+}
+
+.about-text .timeline-item:last-child{
+    margin-bottom: 0;
+}
+
+.about-text .timeline-item .date{
+    display: block;
+    color: var(--b3-color);
+    font-weight: 400;
+    margin: 0 0 10px;
+}
+.about-text .timeline-item h4{
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+.about-text .timeline-item h4 span{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.about-text .timeline-item p{
+    font-weight: 400;
+    font-size: 12px;
+}
